@@ -5,7 +5,10 @@ Time spent: 4 days spent in total
 > Objective: Find, analyze, recreate, and document **Three vulnerabilities** affecting an old version of WordPress
 
 ## Pen Testing Report
+### Scan
+This is a scan done with WordPress version 4.0 and the reflex-gallery plugin. Using WPScan with a Kali linux OS in Virtual Box the scan shows 112 Vulnerabilities. 
 
+<img src="WPScan.gif" width="800"
 ### 1. Admin XSS
 
 - [ ] Summary: 
