@@ -18,6 +18,7 @@ This is a scan done with WordPress version 4.0 and the reflex-gallery plugin. Us
   - Fixed in version: 4.6.1
 - [ ] GIF Walkthrough:
 <img src="XSS Attack.gif" width="600">
+
 - [ ] Steps to recreate:
 Here the admin will be logged in creating a page for the end-users. While the admin creates this page they can hide a XSS script such as the one below for them to click. That can then execute the injections and cause future harm.
 
@@ -26,7 +27,7 @@ Here the admin will be logged in creating a page for the end-users. While the ad
 ```
 
 - [ ] Affected source code:
-  - [Link 1]([[https://core.trac.wordpress.org/browser/tags/version/src/source_file.php](http://wpdistillery.vm/%3E%3C/a%3E%3Ca%20title=)]
+  - [Link 1][[https://core.trac.wordpress.org/browser/tags/version/src/source_file.php](http://wpdistillery.vm/%3E%3C/a%3E%3Ca%20title=)]
 
 ### 2. (Required) Vulnerability Name or ID
 
@@ -57,14 +58,14 @@ Clickjacking can be used to redirect the end-user somewhere else using a link or
 ```
 
 - [ ] Affected source code:
-[Link 1](http://wpdistillery.vm/bio/)
+  - [Link 1][(http://wpdistillery.vm/bio/)]
 
 ### 3. Arbitrary File Upload
 
 - [ ] Summary: 
   - Vulnerability types: XSS
   - Tested in version:4.0
-  - Fixed in version: 
+  - Fixed in version: 3.1.4
 - [ ] GIF Walkthrough:
 
 <img src="Arbitrary File Upload.gif" width="600">
@@ -81,7 +82,7 @@ This exploit was already discovered back in `2015-03-08` by `Anant Shrivastava`.
 ```
 
 - [ ] Affected source code:
-  - [Link 1](http://wpdistillery.vm/food/#comment-11)
+  - [Link 1][(http://wpdistillery.vm/food/#comment-11)]
 
 
 ## Resources
@@ -99,7 +100,7 @@ Challenges that I encountered was understanding the instructions since they were
 
 ## License
 
-    Copyright [yyyy] [Francisco Frade]
+    Copyright [2022] [Francisco Frade]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
