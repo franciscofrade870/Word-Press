@@ -67,7 +67,7 @@ Clickjacking can be used to redirect the end-user somewhere else using a link or
   - Fixed in version: 
 - [ ] GIF Walkthrough:
 
-<img src="" width="800">
+<img src="Arbitrary File Upload.gif" width="600">
 
 - [ ] Steps to recreate: 
 This exploit was already discovered back in `2015-03-08` by `Anant Shrivastava`. However I though this was good to point out again because this exploit did show up on my WPScan from the relfex-gallery plugin, verion 1.3.3, and I will be recreating the attack. What makes this exploit harmful is from the plugin itself. The reason is this plugin and I'm sure others opens up a hole allowing the threatactor to inject a XSS code. Once injected the threatactor is able to upload any type of file to the webpage causing unknown harm; all because the application fails to sanitize the input.
