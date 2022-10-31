@@ -8,7 +8,7 @@ Time spent: 4 days spent in total
 ### Scan
 This is a scan done with WordPress version 4.0 and the reflex-gallery plugin. Using WPScan with a Kali linux OS in Virtual Box the scan shows 112 Vulnerabilities. 
 
-<img src="WPScan.gif" width="800">
+<img src="WPScan.gif" width="500">
 
 ### 1. Admin XSS
 
@@ -17,7 +17,7 @@ This is a scan done with WordPress version 4.0 and the reflex-gallery plugin. Us
   - Tested in version: Word Press 4.0
   - Fixed in version: 4.6.1
 - [ ] GIF Walkthrough:
-<img src="XSS Attack.gif" width="800">
+<img src="XSS Attack.gif" width="500">
 - [ ] Steps to recreate:
 Here the admin will be logged in creating a page for the end-users. While the admin creates this page they can hide a XSS script such as the one below for them to click. That can then execute the injections and cause future harm.
 
@@ -35,12 +35,29 @@ Here the admin will be logged in creating a page for the end-users. While the ad
   - Tested in version: 4.0
   - Fixed in version: Im not sure
 - [ ] GIF Walkthrough:
-<img src="ClickJacking.gif" width="800">
+
+<img src="ClickJacking.gif" width="500">
 
 - [ ] Steps to recreate: 
-Clickjacking can be used to redirect the end-user somewhere else using a link or image. This attack is also considered part of the XSS family but it is also known as "hijack clicking". 
+
+Clickjacking can be used to redirect the end-user somewhere else using a link or image. This attack is also considered part of the XSS family but it is also known as "hijack clicking". In the first attack it imitate a link that the end-user will click on. From there the threatactor will be able to looking into thier cookie sessions and steal any assets the user may have. The second attack shows an image that has a hidden link. If the image was suppose to imitate a video the target will click on it initating what ever attack may happen. In this case it the target was redirected to a new webpage. 
+
+```
+<html>
+	<head>
+		<title>ClickJack</title>
+	<head>
+	<body>
+	<iframe src="https://mrdoob.com/projects/chromeexperiments/google-gravity/" onmouseover= alert(document.cookie);></iframe>
+	<body>
+```
+
+```
+<a href="https://mrdoob.com/projects/chromeexperiments/google-gravity/" rel="nofollow"><img src="data:image/jpeg;base64,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"></a>
+```
+
 - [ ] Affected source code:
-  - [Link 1](http://wpdistillery.vm/bio/)
+[Link 1](http://wpdistillery.vm/bio/)
 
 ### 3. (Required) Vulnerability Name or ID
 
