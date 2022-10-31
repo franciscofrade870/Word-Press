@@ -32,13 +32,15 @@ Here the admin will be logged in creating a page for the end-users. While the ad
 
 - [ ] Summary: 
   - Vulnerability types: Click Jacking
-  - Tested in version:
-  - Fixed in version: 
+  - Tested in version: 4.0
+  - Fixed in version: Im not sure
 - [ ] GIF Walkthrough:
-<img src="" width="800">
+<img src="ClickJacking.gif" width="800">
+
 - [ ] Steps to recreate: 
+Clickjacking can be used to redirect the end-user somewhere else using a link or image. This attack is also considered part of the XSS family but it is also known as "hijack clicking". 
 - [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+  - [Link 1](http://wpdistillery.vm/bio/)
 
 ### 3. (Required) Vulnerability Name or ID
 
