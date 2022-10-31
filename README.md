@@ -8,7 +8,7 @@ Time spent: 4 days spent in total
 ### Scan
 This is a scan done with WordPress version 4.0 and the reflex-gallery plugin. Using WPScan with a Kali linux OS in Virtual Box the scan shows 112 Vulnerabilities. 
 
-<img src="WPScan.gif" width="500">
+<img src="WPScan.gif" width="600">
 
 ### 1. Admin XSS
 
@@ -17,7 +17,7 @@ This is a scan done with WordPress version 4.0 and the reflex-gallery plugin. Us
   - Tested in version: Word Press 4.0
   - Fixed in version: 4.6.1
 - [ ] GIF Walkthrough:
-<img src="XSS Attack.gif" width="500">
+<img src="XSS Attack.gif" width="600">
 - [ ] Steps to recreate:
 Here the admin will be logged in creating a page for the end-users. While the admin creates this page they can hide a XSS script such as the one below for them to click. That can then execute the injections and cause future harm.
 
@@ -36,7 +36,7 @@ Here the admin will be logged in creating a page for the end-users. While the ad
   - Fixed in version: Im not sure
 - [ ] GIF Walkthrough:
 
-<img src="ClickJacking.gif" width="500">
+<img src="Clickjacking.gif" width="600">
 
 - [ ] Steps to recreate: 
 
@@ -59,30 +59,56 @@ Clickjacking can be used to redirect the end-user somewhere else using a link or
 - [ ] Affected source code:
 [Link 1](http://wpdistillery.vm/bio/)
 
-### 3. (Required) Vulnerability Name or ID
+### 3. Arbitrary File Upload
 
 - [ ] Summary: 
-  - Vulnerability types:
-  - Tested in version:
+  - Vulnerability types: XSS
+  - Tested in version:4.0
   - Fixed in version: 
 - [ ] GIF Walkthrough:
+
 <img src="" width="800">
+
 - [ ] Steps to recreate: 
+This exploit was already discovered back in `2015-03-08` by `Anant Shrivastava`. However I though this was good to point out again because this exploit did show up on my WPScan from the relfex-gallery plugin, verion 1.3.3, and I will be recreating the attack. What makes this exploit harmful is from the plugin itself. The reason is this plugin and I'm sure others opens up a hole allowing the threatactor to inject a XSS code. Once injected the threatactor is able to upload any type of file to the webpage causing unknown harm; all because the application fails to sanitize the input.
+
+``` 
+<form method = "POST" action = "" enctype = "multipart/form-data" >
+<input type = "file" name = "qqfile"><br>
+<input type = "submit" name = "Submit" value = "inurl">
+</form >
+
+```
+
 - [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+  - [Link 1](http://wpdistillery.vm/food/#comment-11)
 
-## Assets
-
-List any additional assets, such as scripts or files
 
 ## Resources
 
 - [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
 - [WordPress Developer Reference](https://developer.wordpress.org/reference/)
 - [PortSwigger XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
+- [A story of forgotten disclosure and DOM XSS](https://blog.anantshri.info/forgotten_disclosure_dom_xss_prettyphoto)
 
 GIFs created with  ...
 [ScreenToGif](https://www.screentogif.com/) for Windows
 
 ## Notes
 Challenges that I encountered was understanding the instructions since they were not as clear until a TA had explained them to me.
+
+## License
+
+    Copyright [yyyy] [Francisco Frade]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
