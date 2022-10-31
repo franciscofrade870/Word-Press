@@ -19,11 +19,15 @@ This is a scan done with WordPress version 4.0 and the reflex-gallery plugin. Us
 - [ ] GIF Walkthrough:
 <img src="XSS Attack.gif" width="800">
 - [ ] Steps to recreate:
-Here the admin will be logged in creating a page for the end-users. While the admin creates this page they can hide a XSS script such as this one ```<a href="></a><a title=" onClick=alert('Well_hello_there') "> Nature</a>```
+Here the admin will be logged in creating a page for the end-users. While the admin creates this page they can hide a XSS script such as the one below for them to click. That can then execute the injections and cause future harm.
+
+```
+<a href="></a><a title=" onClick=alert('Well_hello_there') "> Nature</a>
+```
 
 - [ ] Affected source code:
-  - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-  
+  - [Link 1]([[https://core.trac.wordpress.org/browser/tags/version/src/source_file.php](http://wpdistillery.vm/%3E%3C/a%3E%3Ca%20title=)]
+
 ### 2. (Required) Vulnerability Name or ID
 
 - [ ] Summary: 
