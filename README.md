@@ -13,7 +13,7 @@ Time spent: 4 days spent in total
   - Tested in version: Word Press 4.0
   - Fixed in version: 3.1.4
 - [ ] GIF Walkthrough:
-<img src="" width="800">
+<img src="XSS Attack.gif" width="800">
 - [ ] Steps to recreate:
 Here the admin will be logged in creating a page for the end-users. While the admin creates this page they can hide a XSS script such as this one ``` <a href="></a><a title=" onClick=alert('Well_hello_there') "> Nature</a> ``` 
 - [ ] Affected source code:
